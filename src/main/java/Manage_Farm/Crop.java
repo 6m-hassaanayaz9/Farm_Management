@@ -101,17 +101,17 @@ abstract class Crop implements Closeable {
     // Flowering, Filling, Maturity
     public void advanceStatus ()
     {
-        if (growthStatus.equals("Not Planted")) {
+        if ("Not Planted".equals(growthStatus)) {
             growthStatus = "Germination";
-        } else if (growthStatus.equals("Germination")) {
+        } else if ("Germination".equals(growthStatus)) {
             growthStatus = "Seedling";
-        } else if (growthStatus.equals("Seedling")) {
+        } else if ("Seedling".equals(growthStatus)) {
             growthStatus = "Vegetative";
-        } else if (growthStatus.equals("Vegetative")) {
+        } else if ("Vegetative".equals(growthStatus)) {
             growthStatus = "Flowering";
-        } else if (growthStatus.equals("Flowering")) {
+        } else if ("Flowering".equals(growthStatus)) {
             growthStatus = "Filling";
-        } else if (growthStatus.equals("Filling")) {
+        } else if ("Filling".equals(growthStatus)) {
             growthStatus = "Maturity";
         }
     }
@@ -167,7 +167,7 @@ abstract class Crop implements Closeable {
 
     // Water crop and record it
     public void recordCropWatering(String date, double water) throws RuntimeException {
-        if (growthStatus.equals("Maturity"))
+        if ("Maturity".equals(growthStatus))
         {
             System.out.println("Crop has already matured!");
         }
@@ -188,7 +188,7 @@ abstract class Crop implements Closeable {
 
     // Function to fertilize crop and record it
     public void recordFertilization(String date, double fertilizer) throws RuntimeException {
-        if (growthStatus.equals("Maturity"))
+        if ("Maturity".equals(growthStatus))
         {
             System.out.println("Crop has already matured!");
         }
